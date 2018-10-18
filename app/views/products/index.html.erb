@@ -1,1 +1,30 @@
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-3">
+      <h1>Productos</h1>
+      <%= link_to "Nuevo producto", new_product_path, class: "btn btn-dark float-right" %>
+      <br>
+      <br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Categorias</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= render "category",category: product.categories %></td>
+            <td><%= link_to 'Editar' %>  <%= link_to 'Eliminar' %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

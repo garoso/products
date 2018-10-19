@@ -20,7 +20,7 @@
             <td><%= product.name %></td>
             <td><%= product.price %></td>
             <td><%= render "category",category: product.categories %></td>
-            <td><%= link_to 'Editar' %>  <%= link_to 'Eliminar' %></td>
+            <td><%= link_to 'Editar', edit_product_path(product.id) %>  <%= link_to 'Eliminar' %></td>
           </tr>
           <% end %>
         </tbody>
